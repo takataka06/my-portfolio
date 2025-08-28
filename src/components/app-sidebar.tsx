@@ -1,4 +1,4 @@
-import { User, Home, Send, Dumbbell, BicepsFlexed } from "lucide-react"
+import { User, Home, Send,  BicepsFlexed } from "lucide-react"
 import React from "react"
 
 import {

@@ -111,7 +111,7 @@ function SkillPill({ name, Icon, color, href }: Skill) {
 
 export type Skill = {
   name: string;
-  Icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   color?: string; 
   href?: string;  
 };

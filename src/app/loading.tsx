@@ -1,4 +1,4 @@
-import LoadingSpinner from "@/components/LoadingSpinner.tsx";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function GlobalLoading() {
   return (
