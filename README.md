@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Takagi Kuga Portfolio
 
-## Getting Started
+Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個人ポートフォリオサイトです。  
+デザインコンポーネントや動的ルーティング、ページ遷移時のローディング演出を取り入れ、  
+インターンや就職活動の際に自分のスキル・作品をまとめて見せられる場として開発しました。
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 技術スタック
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: [Next.js 14 (App Router)](https://nextjs.org/)
+- **Language**: TypeScript
+- **UI**: Tailwind CSS, [shadcn/ui](https://ui.shadcn.com/)
+- **Icons**: Lucide-react, React-icons (Simple Icons)
+- **Hosting**: Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ 主な機能 / ページ
 
-## Learn More
+- **Home**: シンプルなヒーローセクション（自己紹介）
+- **About**: 自己紹介 + スキルセット（React-icons で技術ごとのブランドアイコン表示）
+- **Works**: 制作物一覧。Next/Image を用いて最適化表示
+- **Contact**: UIフォーム（デモ）。shadcn/ui のフォーム構成を活用
+- **Sidebar Navigation**: 共通レイアウトでサイドバーを実装
+- **Loading Animation**: ページ遷移時に Pac-Man ローディングアニメーションを表示  
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📖 学び・工夫した点
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **UI/UX**  
+  - shadcn/ui を使いながら自分なりにカスタマイズ → デザイン再現力・UI構築力を強化
+  - ローディングやフェード演出を加え、ユーザー体験を意識
 
-## Deploy on Vercel
+- **Next.js App Router**  
+  - サーバーコンポーネントとクライアントコンポーネントを分離  
+  - `loading.tsx` を活用して非同期遷移時の UX を改善
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **型安全**  
+  - TypeScript で props や Skill 型を定義  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **パフォーマンス**  
+  - 本番環境でもローダーを確実に表示するために `noStore`を適切に利用
+
+---
+
+## デモ
+
+[Vercel デプロイ URL](https://my-portfolio-orcin-omega-13.vercel.app/)  
+
+---
+
+
+## 今後の改善予定
+
+- Contact ページを実際のメール送信 API（Resend/SendGrid 等）と連携  
+- Works ページを CMS（microCMS / Contentful）から動的取得に切り替え  
+- テスト導入（Playwright or Vitest）での E2E 検証
+- モバイルデザインのさらなる最適化
+
+---
+
+
