@@ -26,7 +26,7 @@ export const metadata = { title: "About | Kuga Takagi" };
 
 export default async function AboutPage() {
   noStore();            // これでキャッシュを回避 = 常に動的
-  await wait(1500); 
+  await wait(1200); 
   return (
     <FadeIn delay={0.3}>
     <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20">
@@ -44,8 +44,10 @@ export default async function AboutPage() {
         <CardContent className="prose prose-slate max-w-none dark:prose-invert">
           <p className=" text-pretty text-base text-slate-700/90 md:text-lg dark:text-slate-300/90 leading-7 text-muted-foreground">
           東北学院大学の情報系2年<span className="font-semibold text-foreground">高木空河です</span>.
-          Web開発に興味を持っており、Rails / Next.js を中心に個人開発と学習を進めています。
-
+          Web開発に興味を持っており、Rails / Next.js を中心に個人開発と学習を進めています。<br/>
+          将来的には、<span className="font-semibold text-foreground">フルスタックエンジニア</span>として活躍したいと考えています。
+          <br/>
+          趣味はバレーをしたり美味しいご飯を食べることです🍚
           </p>
           
         </CardContent>
@@ -58,7 +60,7 @@ export default async function AboutPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <SkillGroup title="Languages & Runtime" items={LANGS} />
+        <SkillGroup title="Languages" items={LANGS} />
         <SkillGroup title="Frameworks & Libraries" items={FW} />
         <SkillGroup title="DB & Infra" items={INFRA} />
         <SkillGroup title="Tools & Others" items={TOOLS} />

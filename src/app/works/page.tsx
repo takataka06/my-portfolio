@@ -5,7 +5,7 @@ import { wait } from "@/lib/wait";
 
 export default async function WorkPage() {
   noStore();            // これでキャッシュを回避 = 常に動的
-  await wait(1500);
+  await wait(1200);
   return (
     <>
       <section id="works" className="py-24 bg-gradient-to-br from-sky-200 via-sky-300 to-cyan-300 dark:from-sky-950 dark:via-slate-900 dark:to-slate-950">
@@ -33,7 +33,7 @@ export default async function WorkPage() {
                 TGU掲示板
               </h3>
               <p className="mt-2 text-gray-600 dark:text-gray-300">
-                東北学院生に向けて作った掲示板サイトです。<br />
+                自分の大学に向けて作った掲示板サイトです。<br />
                 現在ユーザー数は80人程です。詳しくは
                 <a href="https://github.com/takataka06/TGU-" className="text-sky-600 hover:underline">
                   GitHub
