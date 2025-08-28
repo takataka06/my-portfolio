@@ -6,7 +6,7 @@ Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個�
 
 ---
 
-## 🚀 技術スタック
+## 技術スタック
 
 - **Framework**: [Next.js 14 (App Router)](https://nextjs.org/)
 - **Language**: TypeScript
@@ -16,9 +16,9 @@ Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個�
 
 ---
 
-## ✨ 主な機能 / ページ
+## 主な機能 / ページ
 
-- **Home**: シンプルなヒーローセクション（自己紹介）
+- **Home**: 自己紹介
 - **About**: 自己紹介 + スキルセット（React-icons で技術ごとのブランドアイコン表示）
 - **Works**: 制作物一覧。Next/Image を用いて最適化表示
 - **Contact**: UIフォーム（デモ）。shadcn/ui のフォーム構成を活用
@@ -45,18 +45,16 @@ Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個�
 
 ---
 
-## デモ
-
-[Vercel デプロイ URL](https://my-portfolio-orcin-omega-13.vercel.app/)  
+## ポートフォリオの見方
+ブラウザで以下にアクセス
+https://my-portfolio-orcin-omega-13.vercel.app/
 
 ---
 
 
 ## 今後の改善予定
 
-- Contact ページを実際のメール送信 API（Resend/SendGrid 等）と連携  
-- Works ページを CMS（microCMS / Contentful）から動的取得に切り替え  
-- テスト導入（Playwright or Vitest）での E2E 検証
+- Contact ページを実際のメール送信 APIと連携  
 - モバイルデザインのさらなる最適化
 
 ---
