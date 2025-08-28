@@ -1,18 +1,20 @@
-# Takagi Kuga Portfolio
+# My Portfolio
 
-Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個人ポートフォリオサイトです。  
-デザインコンポーネントや動的ルーティング、ページ遷移時のローディング演出を取り入れ、  
-インターンや就職活動の際に自分のスキル・作品をまとめて見せられる場として開発しました。
+## この作品を作ろうと思ったきっかけ
+
+長期インターンを探していく上で手軽に自分のスキル・作品などをアピールできるサイトがあれば便利ではないかと考え、作ろうと考えました。
+また、同時並行でreactやnext.jsなどフロントエンドの勉強もしていたので知識のアウトプットとしても活用しました。
 
 ---
 
 ## 技術スタック
 
-- **Framework**: [Next.js 14 (App Router)](https://nextjs.org/)
-- **Language**: TypeScript
+- **フレームワーク**: [Next.js 15 (App Router)](https://nextjs.org/)
+- **ライブラリ**: react 19.1.0
+- **言語**: TypeScript
 - **UI**: Tailwind CSS, [shadcn/ui](https://ui.shadcn.com/)
 - **Icons**: Lucide-react, React-icons (Simple Icons)
-- **Hosting**: Vercel
+- **デプロイ**: Vercel
 
 ---
 
@@ -27,7 +29,7 @@ Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個�
 
 ---
 
-## 📖 学び・工夫した点
+## 学び・工夫した点
 
 - **UI/UX**  
   - shadcn/ui を使いながら自分なりにカスタマイズ → デザイン再現力・UI構築力を強化
@@ -45,7 +47,7 @@ Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui で構築した個�
 
 ---
 
-## ポートフォリオの見方
+## サイトの見方
 ブラウザで以下にアクセス
 https://my-portfolio-orcin-omega-13.vercel.app/
 
