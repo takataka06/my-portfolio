@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Github, Linkedin, MapPin, Send } from "lucide-react";
+import { Mail, Github,Send } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-
-
+import {SiWantedly} from "react-icons/si"
+import FadeIn from "@/components/motion/FadeIn";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,32 +20,41 @@ export default function ContactPage() {
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3500);
   };
-
   return (
     <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 ">
       {/* 背景の軽い装飾（ドットグリッド） */}
       <div className="pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(circle_at_1px_1px,theme(colors.slate.300/0.25)_1px,transparent_1px)] [background-size:20px_20px] dark:[background:radial-gradient(circle_at_1px_1px,theme(colors.slate.700/0.35)_1px,transparent_1px)]" />
 
       <div className="mb-8 flex items-center gap-3">
-        <Badge variant="secondary" className="rounded-full text-white">Thank you for interesting in my portfolio!</Badge>
-        <Separator className="hidden flex-1 sm:block" />
-      </div>
+          <FadeIn delay={0.1}>
+          <Badge
+            variant="secondary"
+            className="rounded-full text-white text-lg md:text-xl lg:text-2xl px-5 py-2"
+          >
+            Thank you for your interest in my portfolio!!
+          </Badge>
+          </FadeIn>
+          <Separator className="hidden flex-1 sm:block" />
+        </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* 左：連絡先カード */}
         <Card className="backdrop-blur supports-[backdrop-filter]:bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60 p-[1px]">
+        <FadeIn delay={0.4}>
           <CardHeader>
             <CardTitle className="pt-4">Contact me!!</CardTitle>
           </CardHeader>
           <CardContent className="space-y-15">
-            <ContactLink href="mailto:s240713058@g.tohoku-gakuin.ac.jp" icon={<Mail className="h-4 w-4" />}>you@example.com</ContactLink>
-            <ContactLink href="https://github.com/takataka06" icon={<Github className="h-4 w-4" />}>@yourname</ContactLink>
-            <ContactLink href="https://www.linkedin.com/in/yourname" icon={<Linkedin className="h-4 w-4" />}>LinkedIn</ContactLink>
+            <ContactLink href="mailto:s240713058@g.tohoku-gakuin.ac.jp" icon={<Mail className="h-4 w-4" />}>s240713058@g.tohoku-gakuin.ac.jp</ContactLink>
+            <ContactLink href="https://github.com/takataka06" icon={<Github className="h-4 w-4" />}>@takataka06</ContactLink>
+            <ContactLink href="https://www.wantedly.com/id/takagi_kuga" icon={<SiWantedly className="h-4 w-4"/>}>Wantedly</ContactLink>
           </CardContent>
+          </FadeIn>
         </Card>
 
         {/* 右フォーム */}
         <div className="rounded-2xl bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60 p-[1px]">
+          <FadeIn delay={0.5}>
           <Card className="rounded-[calc(theme(borderRadius.2xl)-1px)]">
             <CardHeader>
               <CardTitle>Contact</CardTitle>
@@ -69,26 +78,18 @@ export default function ContactPage() {
                 </FormField>
 
                 <div className="flex items-center gap-3 pt-2">
-                  <Button type="submit" className="gap-2 bg-rose-1000 text-white hover:bg-rose-900 hover:text-white">
+                  <Button type="submit" className="gap-2 bg-rose-700 text-white hover:bg-rose-900 hover:text-white">
                     <Send className="h-4 w-4" /> Send
                   </Button>
                   {submitted && (
-                    <span className="text-sm text-green-600 dark:text-green-400">（デモ）送信しました</span>
-                  )}
+                    <span className="text-sm text-white">送信しました</span>
+                  )} {/* ボタンが押されたら送信される */}
                 </div>
               </form>
             </CardContent>
           </Card>
+          </FadeIn>
         </div>
-      </div>
-
-      {/* 補助：他ページ誘導 */}
-      <div className="mt-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-        <span>まずは</span>
-        <Link href="/works" className="underline underline-offset-4">Works</Link>
-        <span>や</span>
-        <Link href="/about" className="underline underline-offset-4">About</Link>
-        <span>もご覧ください。</span>
       </div>
     </div>
   );
@@ -98,7 +99,7 @@ function ContactLink({ href, icon, children }: { href: string; icon: React.React
   return (
     <Link
       href={href}
-      className="group flex items-center gap-3 rounded-xl border border-transparent px-3 py-2 transition-colors hover:border-border hover:bg-accent/40 hover:text-accent-foreground"
+      className="group flex items-center gap-3 rounded-xl border border-border/70 px-3 py-2 transition-colors hover:border-border hover:bg-accent/40 hover:text-accent-foreground"
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
     >

@@ -1,6 +1,11 @@
 import FadeIn from "@/components/motion/FadeIn";
+import { unstable_noStore as noStore } from "next/cache";
+import { wait } from "@/lib/wait";
 
-export default function WorkPage() {
+
+export default async function WorkPage() {
+  noStore();            // これでキャッシュを回避 = 常に動的
+  await wait(1500);
   return (
     <>
       <section id="works" className="py-24 bg-gradient-to-br from-sky-200 via-sky-300 to-cyan-300 dark:from-sky-950 dark:via-slate-900 dark:to-slate-950">
@@ -14,7 +19,7 @@ export default function WorkPage() {
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Work item */}
             <FadeIn delay={1.0}>
-            <li className="group bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2">
+            <li className="group bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2">
               <a href="https://tgu-site.onrender.com" target="_blank" rel="noopener noreferrer">
                 <div className="relative overflow-hidden rounded-lg">
                   <img

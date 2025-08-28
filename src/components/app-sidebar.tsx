@@ -25,11 +25,6 @@ const items = [
     icon: User,
   },
   {
-    title: "Skills",
-    url: "/skills",
-    icon: Dumbbell,
-  },
-  {
     title: "Works",
     url: "/works",
     icon: BicepsFlexed,
