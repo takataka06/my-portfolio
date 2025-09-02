@@ -59,8 +59,8 @@ https://my-portfolio-orcin-omega-13.vercel.app/
 
 ## 今後の改善予定
 
-- Contact ページを実際のメール送信 APIと連携  
-- モバイルデザインのさらなる最適化
+- Contact ページを実際のメール送信をAPIかuse serverで連携  
+- レスポンシブ対応のさらなる最適化
 - 成果物を増やしMy worksに追加していく。
 - リファクタリングをして見やすいコードに
 
