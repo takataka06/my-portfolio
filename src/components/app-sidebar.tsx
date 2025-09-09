@@ -1,4 +1,4 @@
-import { User, Home, Send,  BicepsFlexed } from "lucide-react"
+import { items } from "@/config/sidebar/items"
 import React from "react"
 
 import {
@@ -11,29 +11,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    title: "About me",
-    url: "/about",
-    icon: User,
-  },
-  {
-    title: "Works",
-    url: "/works",
-    icon: BicepsFlexed,
-  },
-  {
-    title: "Contacts",
-    url: "/contacts",
-    icon: Send,
-  },
-]
+
 
 export function AppSidebar() {
   return (
