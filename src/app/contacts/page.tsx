@@ -21,9 +21,8 @@ export default function ContactPage() {
     setTimeout(() => setSubmitted(false), 3500);
   };
   return (
-    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 ">
-      {/* 背景の軽い装飾（ドットグリッド） */}
-      <div className="pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(circle_at_1px_1px,theme(colors.slate.300/0.25)_1px,transparent_1px)] [background-size:20px_20px] dark:[background:radial-gradient(circle_at_1px_1px,theme(colors.slate.700/0.35)_1px,transparent_1px)]" />
+    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 text-pretty  text-slate-700/90 md:text-lg dark:text-slate-300/90">
+      <div className="pointer-events-none absolute " />
 
       <div className="mb-8 flex items-center gap-3">
           <FadeIn delay={0.1}>
@@ -38,8 +37,8 @@ export default function ContactPage() {
         </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* 左：連絡先カード */}
-        <Card className="backdrop-blur supports-[backdrop-filter]:bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60 p-[1px]">
+        {/* 連絡先カード */}
+        <Card className="">
         <FadeIn delay={0.4}>
           <CardHeader>
             <CardTitle className="pt-4">Contact me!!</CardTitle>
@@ -52,8 +51,8 @@ export default function ContactPage() {
           </FadeIn>
         </Card>
 
-        {/* 右フォーム */}
-        <div className="rounded-2xl bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60 p-[1px]">
+        {/* フォーム */}
+        <div className="">
           <FadeIn delay={0.5}>
           <Card className="rounded-[calc(theme(borderRadius.2xl)-1px)]">
             <CardHeader>
@@ -83,7 +82,7 @@ export default function ContactPage() {
                   </Button>
                   {submitted && (
                     <span className="text-sm text-white">送信しました</span>
-                  )} {/* ボタンが押されたら送信される */}
+                  )}
                 </div>
               </form>
             </CardContent>
