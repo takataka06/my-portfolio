@@ -194,7 +194,7 @@ function Sidebar({
           side={side}
         >
           <DialogTitle>Sidebar Menu</DialogTitle>
-          <div className="flex h-full w-full flex-col">{children}</div>
+          <div className="flex h-full w-full flex-co text-white">{children}</div>
         </SheetContent>
       </Sheet>
     )
