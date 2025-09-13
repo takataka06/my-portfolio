@@ -21,6 +21,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { DialogTitle } from "@radix-ui/react-dialog"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -192,6 +193,7 @@ function Sidebar({
           }
           side={side}
         >
+          <DialogTitle>Sidebar Menu</DialogTitle>
           <div className="flex h-full w-full flex-col">{children}</div>
         </SheetContent>
       </Sheet>

@@ -25,22 +25,22 @@ import FadeIn from "@/components/motion/FadeIn";
 export const metadata = { title: "About | Kuga Takagi" };
 
 export default async function AboutPage() {
-  noStore();            // これでキャッシュを回避 = 常に動的
+  noStore();            // これでキャッシュを回避 
   await wait(1200); 
   return (
     <FadeIn delay={0.3}>
-    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20">
+    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 ">
       {/* Subtle background */}
-      <div className="pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(circle_at_1px_1px,theme(colors.slate.300/0.25)_1px,transparent_1px)] [background-size:20px_20px] dark:[background:radial-gradient(circle_at_1px_1px,theme(colors.slate.700/0.35)_1px,transparent_1px)]" />
+      <div className="pointer-events-none" />
 
       {/* Header */}
       <div className="mb-8 flex items-center gap-3">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-white">About me</h1>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-white border-white">About me</h1>
         <Separator className="hidden flex-1 sm:block" />
         <Badge variant="secondary" className="rounded-full">Open to opportunities</Badge>
       </div>
 
-      <Card className="p-5 mb-10 bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60">
+      <Card className="p-5 mb-10">
         <CardContent className="prose prose-slate max-w-none dark:prose-invert">
           <p className=" text-pretty text-base text-slate-700/90 md:text-lg dark:text-slate-300/90 leading-7 text-muted-foreground">
           東北学院大学の情報系2年<span className="font-semibold text-foreground">高木空河です</span>.
@@ -73,9 +73,9 @@ export default async function AboutPage() {
 
 function SkillGroup({ title, items }: { title: string; items: Skill[] }) {
   return (
-    <Card className="p-10 bg-gradient-to-br from-sky-400/60 via-cyan-400/40 to-indigo-400/60">
+    <Card className="p-10 text-white text-pretty">
       <CardHeader>
-        <CardTitle className="text-base text-white">{title}</CardTitle>
+        <CardTitle className="text-pretty text-base md:text-lg leading-7 text-muted-foreground">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">

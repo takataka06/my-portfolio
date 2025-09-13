@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <main className="relative min-h-dvh overflow-hidden">
-        {/* Background: cool sky blue gradient + soft blobs */}
+        {/* Background */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-200 via-sky-300 to-cyan-300 dark:from-sky-950 dark:via-slate-900 dark:to-slate-950" />
         <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-96 w-96 rounded-full bg-cyan-300/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -right-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-sky-400/30 blur-3xl" />
