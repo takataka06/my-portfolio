@@ -75,7 +75,7 @@ function SkillGroup({ title, items }: { title: string; items: Skill[] }) {
   return (
     <Card className="p-10 text-white text-pretty">
       <CardHeader>
-        <CardTitle className="text-pretty text-base text-slate-700/90 md:text-lg dark:text-slate-300/90 leading-7 text-muted-foreground">{title}</CardTitle>
+        <CardTitle className="text-pretty text-base md:text-lg leading-7 text-muted-foreground">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
