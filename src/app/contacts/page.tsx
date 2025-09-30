@@ -22,8 +22,7 @@ export default function ContactPage() {
     setTimeout(() => setSubmitted(false), 3500);
   };
   return (
-    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 text-pretty  text-slate-700/90 md:text-lg dark:text-slate-300/90">
-      <div className="pointer-events-none absolute " />
+    <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-20 text-pretty  text-slate-700/90 dark:text-slate-300/90">
 
       <div className="mb-8 flex items-center gap-3">
           <FadeIn delay={0.1}>
