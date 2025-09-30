@@ -6,10 +6,6 @@ export default function Home() {
   return (
     <>
       <main className="relative min-h-dvh overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-200 via-sky-300 to-cyan-300 dark:from-sky-950 dark:via-slate-900 dark:to-slate-950" />
-        <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-96 w-96 rounded-full bg-cyan-300/40 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-sky-400/30 blur-3xl" />
 
 
         {/* Content */}
@@ -28,7 +24,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn delay={2.0}>
-        <p className="max-w-2xl text-pretty text-base text-slate-700/90 md:text-lg dark:text-slate-300/90">
+        <p className="max-w-2xl text-base text-slate-700/90 md:text-lg dark:text-slate-300/90">
         Rails / Next.js を中心に学習・開発中の大学2年生。作品は
         <span className="font-semibold"> Works</span> にまとめています。
         </p>

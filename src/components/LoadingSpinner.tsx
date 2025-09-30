@@ -1,3 +1,4 @@
+//非同期処理中に表示するスピナーコンポーネント
 
 export default function LoadingSpinner() {
   return (

@@ -1,3 +1,4 @@
+// 一つ一つのスキルを表示するコンポーネント
 import Link from "next/link";
 import type { Skill } from "@/data/skills";
 
@@ -12,7 +13,7 @@ export function SkillPill({ name, Icon, color, href }: Skill) {
     </div>
   );
   return href ? (
-    <Link href={href} target="_blank" rel="noreferrer">
+    <Link href={href} target="_blank" rel="noreferrer"> // 外部リンクの場合は新しいタブで開く
       {content}
     </Link>
   ) : (
