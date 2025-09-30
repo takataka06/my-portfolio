@@ -4,7 +4,7 @@ import { wait } from "@/lib/wait";
 
 
 export default async function WorkPage() {
-  noStore();            // これでキャッシュを回避 = 常に動的
+  noStore(); // これでキャッシュを回避 = 常に動的
   await wait(1200);
   return (
     <>

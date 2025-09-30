@@ -22,9 +22,9 @@ export default async function AboutPage() {
       <Card className="p-5 mb-10 border-white text-white text-pretty">
         <CardContent className="prose prose-slate max-w-none dark:prose-invert">
           <p className=" text-pretty text-base text-slate-700/90 md:text-lg dark:text-slate-300/90 leading-7 text-muted-foreground">
-          東北学院大学の情報系2年<span className="font-semibold text-foreground">高木空河です</span>.
+          東北学院大学の情報系2年<span className="font-semibold ">高木空河です</span>.
           Web開発に興味を持っており、Rails / Next.js を中心に個人開発と学習を進めています。<br/>
-          将来的には、<span className="font-semibold text-foreground">フルスタックエンジニア</span>として活躍したいと考えています。
+          将来的には、<span className="font-semibold ">フルスタックエンジニア</span>として活躍したいと考えています。
           <br/>
           趣味はバレーをしたり美味しいご飯を食べることです🍚
           </p>
@@ -32,9 +32,11 @@ export default async function AboutPage() {
         </CardContent>
       </Card>
       {/* Skills */}
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4">
         <h2 className="text-xl font-semibold text-white">Skills</h2>
+        <div className="text-right">
         <Link href="/works" className="text-sm underline underline-offset-4 text-white">See projects →</Link>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">

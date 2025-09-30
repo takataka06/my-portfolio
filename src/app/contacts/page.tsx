@@ -38,8 +38,8 @@ export default function ContactPage() {
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* 連絡先カード */}
-        <Card className="">
         <FadeIn delay={0.4}>
+        <Card>
           <CardHeader>
             <CardTitle className="pt-4">Contact me!!</CardTitle>
           </CardHeader>
@@ -48,8 +48,8 @@ export default function ContactPage() {
             <ContactLink href="https://github.com/takataka06" icon={<Github className="h-4 w-4" />}>@takataka06</ContactLink>
             <ContactLink href="https://www.wantedly.com/id/takagi_kuga" icon={<SiWantedly className="h-4 w-4"/>}>Wantedly</ContactLink>
           </CardContent>
-          </FadeIn>
         </Card>
+        </FadeIn>
 
         {/* フォーム */}
         <div className="">
