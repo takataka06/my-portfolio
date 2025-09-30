@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { Mail, Github,Send } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,6 +9,8 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import {SiWantedly} from "react-icons/si"
 import FadeIn from "@/components/motion/FadeIn";
+import { ContactLink } from "@/components/ContactLink";
+import { FormField } from "@/components/FormField";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,7 +55,7 @@ export default function ContactPage() {
         {/* フォーム */}
         <div className="">
           <FadeIn delay={0.5}>
-          <Card className="rounded-[calc(theme(borderRadius.2xl)-1px)]">
+          <Card>
             <CardHeader>
               <CardTitle>Contact</CardTitle>
               <CardDescription>※送信は行いません</CardDescription>
@@ -77,7 +78,7 @@ export default function ContactPage() {
                 </FormField>
 
                 <div className="flex items-center gap-3 pt-2">
-                  <Button type="submit" className="gap-2 bg-rose-700 text-white hover:bg-rose-900 hover:text-white">
+                  <Button type="submit" className="bg-rose-700 text-white hover:bg-rose-900">
                     <Send className="h-4 w-4" /> Send
                   </Button>
                   {submitted && (
@@ -94,27 +95,3 @@ export default function ContactPage() {
   );
 }
 
-function ContactLink({ href, icon, children }: { href: string; icon: React.ReactNode; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-center gap-3 rounded-xl border border-border/70 px-3 py-2 transition-colors hover:border-border hover:bg-accent/40 hover:text-accent-foreground"
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noreferrer" : undefined}
-    >
-      <span className="grid size-8 place-items-center rounded-lg bg-muted text-muted-foreground transition-colors group-hover:bg-background group-hover:text-foreground">
-        {icon}
-      </span>
-      <span className="font-medium">{children}</span>
-    </Link>
-  );
-}
-
-function FormField({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="grid gap-2 text-sm">
-      <span className="text-foreground/80">{label}</span>
-      {children}
-    </label>
-  );
-}
