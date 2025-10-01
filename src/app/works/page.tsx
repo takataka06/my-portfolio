@@ -1,8 +1,10 @@
 import FadeIn from "@/components/motion/FadeIn";
 import { wait } from "@/lib/wait";
+import { unstable_noStore as noStore } from "next/cache";
 
 
 export default async function WorkPage() {
+  noStore(); //　キャッシュを回避し常にlodingを表示させる
   await wait(1200);
   return (
     <>

@@ -4,10 +4,12 @@ import { wait } from "@/lib/wait";
 import FadeIn from "@/components/motion/FadeIn";
 import {SkillGroup} from "@/components/SkillGroup";
 import {LANGS,FW,INFRA,TOOLS} from "@/types/skill"
+import { unstable_noStore as noStore } from "next/cache";
 
 export const metadata = { title: "About | Kuga Takagi" };
 
-export default async function AboutPage() {    
+export default async function AboutPage() {  
+  noStore(); //　キャッシュを回避し常にlodingを表示させる
   await wait(1200); 
   return (
     <FadeIn delay={0.3}>
