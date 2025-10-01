@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Card, CardContent} from "@/components/ui/card";
-import { unstable_noStore as noStore } from "next/cache";
 import { wait } from "@/lib/wait";
 import FadeIn from "@/components/motion/FadeIn";
 import {SkillGroup} from "@/components/SkillGroup";
@@ -8,8 +7,7 @@ import {LANGS,FW,INFRA,TOOLS} from "@/types/skill"
 
 export const metadata = { title: "About | Kuga Takagi" };
 
-export default async function AboutPage() {
-  noStore();           // これでキャッシュを回避 
+export default async function AboutPage() {    
   await wait(1200); 
   return (
     <FadeIn delay={0.3}>

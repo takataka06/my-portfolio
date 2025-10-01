@@ -1,10 +1,8 @@
 import FadeIn from "@/components/motion/FadeIn";
-import { unstable_noStore as noStore } from "next/cache";
 import { wait } from "@/lib/wait";
 
 
 export default async function WorkPage() {
-  noStore(); // これでキャッシュを回避 = 常に動的
   await wait(1200);
   return (
     <>
