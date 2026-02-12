@@ -1,50 +1,113 @@
+import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/motion/FadeIn";
 import { wait } from "@/lib/wait";
 import { unstable_noStore as noStore } from "next/cache";
 
+export const metadata = { title: "Works | Kuga Takagi" };
 
-export default async function WorkPage() {
-  noStore(); //　キャッシュを回避し常にlodingを表示させる
+const projects = [
+  {
+    title: "TGU掲示板",
+    description:
+      "東北学院大学の学生向け掲示板サイト。授業情報やイベント情報を共有できるプラットフォームです。⚠︎サーバー代ケチった為、現在サービス停止中。",
+    image: "/tgu.png",
+    tags: ["Ruby on Rails", "PostgreSQL", "Docker"],
+    liveUrl: "https://tgu-site.onrender.com",
+    githubUrl: "https://github.com/takataka06/TGU-",
+  },
+];
+
+export default async function WorksPage() {
+  noStore();
   await wait(1200);
   return (
-    <>
-      <section id="works" className="py-24 bg-gradient-to-br from-sky-200 via-sky-300 to-cyan-300 dark:from-sky-950 dark:via-slate-900 dark:to-slate-950">
-        <div className="container mx-auto px-6">
-          <FadeIn delay={0.5}>
-          <h2 className="text-4xl font-extrabold mb-12 text-center text-gray-800 dark:text-gray-100">
-            My Works
-          </h2>
-          </FadeIn>
-          {/* Works grid */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Work item */}
-            <FadeIn delay={1.0}>
-            <li className="group">
-              <a href="https://tgu-site.onrender.com" target="_blank" rel="noopener noreferrer">
-                <div className="relative overflow-hidden rounded-lg">
-                  <img
-                    src="/tgu.png"
-                    alt="TGU掲示板"
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20 lg:py-24">
+      {/* Header */}
+      <FadeIn delay={0}>
+        <p className="mb-2 text-sm font-medium tracking-widest uppercase text-primary">
+          Projects
+        </p>
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          Works
+        </h1>
+        <p className="mb-12 max-w-xl text-muted-foreground">
+          これまでに制作したプロジェクトの一覧です。
+        </p>
+      </FadeIn>
+
+      {/* Project grid */}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        {projects.map((project, i) => (
+          <FadeIn key={project.title} delay={0.1 + i * 0.1}>
+            <Card className="group overflow-hidden transition-shadow hover:shadow-lg">
+              {/* Image */}
+              <div className="relative aspect-video overflow-hidden bg-muted">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <CardContent className="pt-5">
+                {/* Tags */}
+                <div className="mb-3 flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="text-xs font-normal"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
                 </div>
-              </a>
-              <h3 className="mt-4 text-2xl font-semibold text-gray-800 dark:text-gray-100 group-hover:text-sky-600">
-                TGU掲示板
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                自分の大学に向けて作った掲示板サイトです。<br />
-                現在ユーザー数は80人程です。詳しくは
-                <a href="https://github.com/takataka06/TGU-" className="text-sky-600 hover:underline">
-                  GitHub
-                </a>
-                のReadmeをご覧ください。
-              </p>
-            </li>
-            </FadeIn>
-          </ul>
-        </div>
-      </section>
-    </>
+
+                {/* Title & description */}
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                  {project.description}
+                </p>
+
+                {/* Links */}
+                <div className="flex gap-2">
+                  {project.liveUrl && (
+                    <Button asChild size="sm" className="gap-1.5">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        Live
+                      </a>
+                    </Button>
+                  )}
+                  {project.githubUrl && (
+                    <Button asChild variant="outline" size="sm" className="gap-1.5">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="h-3.5 w-3.5" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
   );
 }

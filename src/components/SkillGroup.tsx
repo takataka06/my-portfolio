@@ -4,9 +4,11 @@ import type { Skill } from "@/data/skills";
 
 export function SkillGroup({ title, items }: { title: string; items: Skill[] }) {
   return (
-    <Card className="p-10 text-white text-pretty">
+    <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-pretty text-base md:text-lg leading-7 text-muted-foreground">{title}</CardTitle>
+        <CardTitle className="text-sm font-medium tracking-wide uppercase text-muted-foreground">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">

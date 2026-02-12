@@ -1,48 +1,55 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/motion/FadeIn";
 
 export default function Home() {
   return (
-    <>
-      <main className="relative min-h-dvh overflow-hidden">
+    <section className="relative min-h-[calc(100dvh-4rem)] overflow-hidden">
+      {/* Background dot pattern */}
+      <div className="dot-pattern absolute inset-0" />
 
+      {/* Subtle gradient accent */}
+      <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 left-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl" />
 
-        {/* Content */}
-        <section className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-6 py-20 md:py-28 lg:py-36">
+      {/* Content */}
+      <div className="relative mx-auto flex max-w-5xl flex-col justify-center px-6 py-24 md:py-32 lg:py-40">
+        <FadeIn delay={0}>
+          <p className="mb-4 text-sm font-medium tracking-widest uppercase text-primary">
+            Portfolio
+          </p>
+        </FadeIn>
+
         <FadeIn delay={0.1}>
-        <p className="text-sm font-medium tracking-wider text-sky-700/80 dark:text-sky-300/80">
-        Welcome to my portfolio!!
-        </p>
+          <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Hi, I&apos;m{" "}
+            <span className="text-primary">Kuga Takagi</span>
+          </h1>
         </FadeIn>
 
-
-        <FadeIn delay={1.0}>
-        <h1 className="text-balance bg-gradient-to-r from-sky-700 via-cyan-700 to-indigo-700 bg-clip-text text-4xl font-extrabold leading-tight text-transparent md:text-6xl dark:from-sky-300 dark:via-cyan-300 dark:to-indigo-300">
-        Hi, I’m Kuga Takagi
-        </h1>
+        <FadeIn delay={0.2}>
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            東北学院大学の情報系2年生。
+            <br />
+            Rails / Next.js を中心に学習・開発しています。
+          </p>
         </FadeIn>
 
-        <FadeIn delay={2.0}>
-        <p className="max-w-2xl text-base text-slate-700/90 md:text-lg dark:text-slate-300/90">
-        Rails / Next.js を中心に学習・開発中の大学2年生。作品は
-        <span className="font-semibold"> Works</span> にまとめています。
-        </p>
+        <FadeIn delay={0.3}>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg" className="gap-2">
+              <Link href="/works">
+                View Works
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/about">About me</Link>
+            </Button>
+          </div>
         </FadeIn>
-
-        
-        
-        <FadeIn delay={2.5} className="flex flex-wrap gap-3 pt-2">
-        <Button asChild size="lg" className="text-white backdrop-blur bg-gradient-to-r from-sky-600 via-cyan-600 to-indigo-600 hover:from-sky-700 hover:via-cyan-700 hover:to-indigo-700">
-        <Link href="/works">View Works</Link>
-        </Button>
-        <Button asChild size="lg" className="text-white backdrop-blur bg-gradient-to-r from-sky-600 via-cyan-600 to-indigo-600 hover:from-sky-700 hover:via-cyan-700 hover:to-indigo-700">
-        <Link href="/about">About me</Link>
-        </Button>
-        </FadeIn>
-        </section>
-        </main>
-
-    </>
+      </div>
+    </section>
   );
 }
